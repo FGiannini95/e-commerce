@@ -4,11 +4,13 @@ import { Page } from '../../../payload/payload-types'
 import { HighImpactHero } from '../../_heros/HighImpact'
 import { LowImpactHero } from '../../_heros/LowImpact'
 import { MediumImpactHero } from '../../_heros/MediumImpact'
+import { CostumHero } from '../../_heros/CostumHero'
 
 const heroes = {
   highImpact: HighImpactHero,
   mediumImpact: MediumImpactHero,
   lowImpact: LowImpactHero,
+  costumHero: CostumHero
 }
 
 export const Hero: React.FC<Page['hero']> = props => {

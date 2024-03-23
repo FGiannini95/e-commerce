@@ -37,7 +37,7 @@ export interface Page {
   title: string;
   publishedOn?: string | null;
   hero: {
-    type: 'none' | 'highImpact' | 'mediumImpact' | 'lowImpact';
+    type: 'none' | 'highImpact' | 'mediumImpact' | 'lowImpact' | 'costumHero';
     richText: {
       [k: string]: unknown;
     }[];
