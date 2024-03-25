@@ -56,24 +56,26 @@ export const CartPage: React.FC<{
             </div>
           ) : (
             <div className={classes.cartWrapper}>
-              <div>
-                {/* CART LIST HEADER */}
-                <div className={classes.header}>
-                  <p>Products</p>
-                  <div className={classes.headerItemDetails} >
-                    <p>Quantity</p>
-                  </div>
-                  <p className={classes.headerubtotal}>Subtotal</p>
+            <div>
+              {/* CART LIST HEADER */}
+              <div className={classes.header}>
+                <p>Products</p>
+                <div className={classes.headerItemDetails}>
+                  <p></p>
+                  <p></p>
+                  <p>Quantity</p>
                 </div>
-                {/* CART ITEM LIST */}
-                <ul className={classes.itemsList}>
-                  {cart?.items?.map((item, index) => {
-                    if (typeof item.product === 'object') {
-                      const {
-                        quantity,
-                        product,
-                        product: { id, title, meta, stripeProductID },
-                      } = item
+                <p className={classes.headersubtotal}>Subtotal</p>
+              </div>
+              {/* CART ITEM LIST */}
+              <ul className={classes.itemsList}>
+                {cart?.items?.map((item, index) => {
+                  if (typeof item.product === 'object') {
+                    const {
+                      quantity,
+                      product,
+                      product: { id, title, meta, stripeProductID },
+                    } = item
 
                       const isLast = index === (cart?.items?.length || 0) - 1
 

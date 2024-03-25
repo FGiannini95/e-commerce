@@ -10,9 +10,21 @@ import { RemoveFromCartButton } from '../../../_components/RemoveFromCartButton'
 
 const CardItem = ({ product, title, metaImage, qty, addItemToCart }) => {
   const [quantity, setQuantity] = useState(qty)
-  const decrementQty = () => {}
-  const incrementQty = () => {}
-  const enterQty = () => {}
+  const decrementQty = () => {
+    const updateQty = quantity > 1 ? quantity - 1 : 1
+    setQuantity(updateQty)
+    addItemToCart({product, quantity: Number(updateQty)})
+  }
+  const incrementQty = () => {
+    const updateQty = quantity + 1
+    setQuantity(updateQty)
+    addItemToCart({product, quantity: Number(updateQty)})
+  }
+  const enterQty = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const updateQty = Number(e.target.value)
+    setQuantity(updateQty)
+    addItemToCart({product, quantity: Number(updateQty)})
+  }
 
   return (
     <li className={classes.item} key={title}>
